@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>{% block title %}{% endblock title %}  Hate Speech detection</title>
+
+    <style>
+      
+      .navbar {
+          background-color: #ede6c9;
+        }
+
+      .navbar-brand {
+        color: #ffffff;
+      }
+
+      .nav-link {
+        color: #ffffff;
+      }
+
+      
+      .container {
+        margin-top: 20px;
+      }
+
+      
+      .output-section {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f8f9fa;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#">Hate speech</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/text">Text</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/micro">Voice</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/link">Audio File</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/video">Video</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/image">Image</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/txtfile">Textfile</a>
+          </li>
+          
+        </ul>
+        <form action="/history" method="post">
+          {% csrf_token %}
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">History</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      {% block body  %}
+
+      {% endblock body %}
+    </div>
+
+    
+    
+  </body>
+</html>
